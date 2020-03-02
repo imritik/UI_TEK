@@ -1,0 +1,73 @@
+<div class="container">
+    <!-- <mat-accordion>
+
+        <mat-expansion-panel *ngFor="let value of avengers">
+            <mat-expansion-panel-header>
+                {{value.naming}}
+            </mat-expansion-panel-header>
+            {{value.city}}
+        </mat-expansion-panel>
+    </mat-accordion> -->
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h2 class="text-center">EDUCATION DETAILS</h2>
+    <hr>
+    <mat-toolbar *ngFor="let value of avengers">
+        <mat-toolbar-row class="records">
+            <span>{{value.naming}}</span>
+        </mat-toolbar-row>
+        <br>
+    </mat-toolbar>
+    <br>
+    <br><br>
+    <div class="text-center panel panel-default col-md-10 col-md-offset-1" style="padding: 0;margin: auto;margin-top: 110px;">
+        <form [formGroup]="formGroup" (ngSubmit)="OnSubmit(formGroup.value)" class="form" style="padding: 20px">
+            <div class="row">
+                <mat-form-field class="form-element">
+                    <mat-label>Qualification Gained</mat-label>
+                    <input type="text" matInput formControlName="myControl" [matAutocomplete]="auto">
+                    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+                        <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                            {{option.name}}
+                        </mat-option>
+                    </mat-autocomplete>
+                </mat-form-field>
+                <mat-form-field class="form-element">
+                    <input matInput placeholder="College Name" type="text" formControlName="collegeName">
+                    <!-- <mat-error>{{oldPasswordMessage}}</mat-error> -->
+                </mat-form-field>
+                <mat-form-field class="form-element">
+                    <input matInput placeholder="Roll Number" type="text" formControlName="rollNumber">
+                    <!-- <mat-error>{{oldPasswordMessage}}</mat-error> -->
+                </mat-form-field>
+            </div>
+            <div class="row">
+
+                <mat-form-field class="example-full-width">
+                    <mat-label>College Address</mat-label>
+                    <textarea matInput placeholder="telangana" formControlName='collegeAddress'></textarea>
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width">
+                    <mat-label>Choose a date</mat-label>
+                    <input matInput [min]="minDate" [matDatepicker]="picker">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+            </div>
+
+            <br>
+            <div class="form-element">
+                <button mat-raised-button color="primary" type="submit" class="btn btn-outline-dark" [disabled]="!formGroup.valid">
+                  Submit
+                  <!-- <i class="fa fa-spinner fa-spin" *ngIf="loading"></i> -->
+                </button>
+            </div>
+            <br>
+        </form>
+        <br>
+    </div>
+</div>

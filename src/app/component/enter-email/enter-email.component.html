@@ -1,0 +1,23 @@
+<div class="container " style="margin: auto;margin-bottom:100px">
+  <div class="text-center panel panel-default col-md-4 col-md-offset-4" style="margin: auto;margin-top: 150px;">
+    <mat-toolbar>
+      <span style="margin: auto;">Enter Email</span>
+    </mat-toolbar>
+    <br>
+    <br>
+    <form [formGroup]="reactiveform" (ngSubmit)="PostData(reactiveform)">
+      <mat-form-field class="form-element">
+        <label>
+          <input matInput type="email" placeholder="Email " formControlName="Email">
+        </label>
+        <mat-error>
+          {{oldPasswordMessage}}
+        </mat-error>
+      </mat-form-field>
+      <br>
+      <button mat-raised-button color="primary" type="submit" class="btn btn-outline-dark" [disabled]="!reactiveform.valid">Submit</button>
+      <br>
+      <br>
+    </form>
+  </div>
+</div>

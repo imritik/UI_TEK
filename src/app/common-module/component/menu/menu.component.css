@@ -1,0 +1,54 @@
+.nbar{
+    border: 1px solid #80808094;
+    border-right: 0;
+    padding: 0%;
+}
+.tek-logo{
+    width: 12%;
+    margin-left: 6%;
+}
+.nav-menu{
+    margin-left: 32%;
+}
+.nav-menu>li{
+    font-weight: bold;
+    font-size: 16px;
+    margin-right: 6%;
+    white-space: nowrap;
+    padding: 1%;
+}
+.nav-menu>li:hover{
+    border-bottom: 2px solid black;
+}
+
+.mini-nav-menu>li{
+    font-weight: bold;
+    font-size: 10px;
+    margin-right: 6%;
+    white-space: nowrap;
+    border-left: 1px solid #80808094;
+    margin: 0;
+}
+.mini-nav-menu>li:last-child{
+    border-right: 1px solid #80808094;
+    font-size: 21px;
+}
+.language{
+    color: black;
+}
+.mini-nav-menu-item>a:hover{
+   background: black;
+   color: white;
+}
+
+.nbar-Mini{
+    padding: 0;
+    border-bottom: 0;
+    border-top: 0;
+}
+.fa-map-marker:before,.fa-globe:before,.fa-search:before {
+    font-size: 15px;
+}
+.mini-nav-menu{
+    margin-left: 70%;
+}
